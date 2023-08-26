@@ -58,13 +58,13 @@
                 <th scope="col">Action</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody th:each="user: ${userList}">
             <tr>
-                <th scope="row">1</th>
-                <td>Rakhi</td>
-                <td>Jha</td>
-                <td>rk35332335321@gmail.com</td>
-                <td>54654531231324654</td>
+                <th scope="row" th:text="${user.id}">1</th>
+                <td th:text="${user.first_name}"></td>
+                <td th:text="${user.last_name}">Jha</td>
+                <td th:text="${user.email}">rk35332335321@gmail.com</td>
+                <td th:text="${user.phone}">54654531231324654</td>
                 <td>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -72,7 +72,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="#">Edit</a></li>
-                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                            <li><a class="dropdown-item" th:href="@{'/home/delete-user/'+${user.id}}">Delete</a></li>
                         </ul>
                     </div>
                 </td>
