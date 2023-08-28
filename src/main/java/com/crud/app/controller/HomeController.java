@@ -32,6 +32,13 @@ public class HomeController {
         userService.createUser(formModel);
         return "redirect:/home/add-data";
     }
+    @GetMapping("/edit/{id}")
+    public String edit(@PathVariable Long id,Model model){
+
+        model.addAttribute("user",userService.getSingleUserById(id));
+        model.addAttribute("userId",id);
+        return "edit";
+    }
 
     @GetMapping("/delete-user/{id}")
     public String deleteUser(@PathVariable Long id){

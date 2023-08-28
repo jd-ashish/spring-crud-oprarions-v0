@@ -71,7 +71,7 @@
                             Dropdown button
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item" th:href="@{'/home/edit/'+${user.id}}">Edit</a></li>
                             <li><a class="dropdown-item" th:href="@{'/home/delete-user/'+${user.id}}">Delete</a></li>
                         </ul>
                     </div>

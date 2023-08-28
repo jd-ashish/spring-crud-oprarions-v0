@@ -39,5 +39,10 @@ public class UserServiceImpl implements UserService {
         userRepo.deleteById(id);
     }
 
+    @Override
+    public UserDTO getSingleUserById(Long id) {
+        return modelMapper.map(userRepo.findById(id).get(),UserDTO.class);
+    }
+
 
 }
